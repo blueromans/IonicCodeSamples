@@ -1,0 +1,35 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="md-list"></ion-icon>
+    </button>
+    <ion-title>Kredi Yükle</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only><img class="barlogo" src="assets/images/iconmini.png"/></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="{{model}}">
+  <ion-item>
+    <ion-label stacked>Tutar</ion-label>
+    <ion-input type="tel" pattern="[0-9]*" placeholder="Yüklemek istediğiniz tutarı yazınız" [(ngModel)]="amount"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-row>
+        <button tappable (click)="confirmAccrual()" outline ion-button icon-start default block>
+          <ion-icon name="ios-check"></ion-icon>
+          Kredi Yükle
+        </button>
+    </ion-row>
+  </ion-item>
+
+  <ion-list>
+    <ion-list-header>Son Oluşan Tahakkuklar</ion-list-header>
+    <ion-item *ngFor="let accrual of accruals" tappable (click)="confirmPayment(accrual)">
+      <p class="accrual_number">{{accrual.accrual_number}}</p>
+      <p>{{accrual.date}} - {{accrual.amount}} TL</p>
+      <ion-badge *ngIf="accrual.status == 'AKTİF'" color="red" item-end>Beklemede</ion-badge>
+      <ion-badge *ngIf="accrual.status == 'ÖDENDİ'" color="green" item-end>Ödendi</ion-badge>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,21 @@
+page-creditinstall {
+
+  .iPhone103,
+  .iPhone106 {
+    background-position: 0 calc(0% + 89px), 0% 0% !important;
+  }
+  .item-input-has-focus .label-md[stacked], .input-has-focus .label-md[stacked], .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating] {
+    color: #333;
+  }
+  .button-md,
+  .button-ios {
+    border-radius: 5px !important;
+    height: 3.6rem !important;
+    font-size: 0.92em !important;
+  }
+  p.accrual_number{
+    font-family: "American Typewriter";
+    font-weight: 600;
+    font-size: 1em;
+  }
+}
