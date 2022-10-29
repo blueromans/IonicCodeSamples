@@ -1,1 +1,1 @@
-# demo_codes
+# Ionic Code Samples For Clean Architecture
